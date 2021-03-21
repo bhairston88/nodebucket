@@ -1,8 +1,23 @@
+/*
+; ==============================
+; Title: app-routing.module.ts
+; Author: Professor Krasso
+; Date: 3/19/2021
+; Modified By: Brooklyn Hairston
+; Description: App routing module
+; ==============================
+*/
+
+//import statements
 import { HomeComponent } from './pages/home/home.component';
 import { BaseLayoutComponent } from './shared/base-layout/base-layout.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { AuthLayoutComponent } from './shared/auth-layout/auth-layout.component';
+import { LoginComponent } from './pages/login/login.component';
+import { AuthGuard } from './shared/auth.guard';
 
+//paths to route components
 const routes: Routes = [
   {
     path: '',
@@ -10,7 +25,18 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        component: HomeComponent
+        component: HomeComponent,
+        canActivate: [AuthGuard]
+      }
+    ]
+  },
+  {
+    path: 'session',
+    component: AuthLayoutComponent,
+    children: [
+      {
+        path: 'login',
+        component: LoginComponent
       }
     ]
   }

@@ -1,0 +1,24 @@
+/* Mat Card Styling */
+
+.login-container {
+  width: 30%;
+  margin: 0 auto;
+  margin-top: 10%;
+}
+
+.login-title {
+  text-align: center;
+  font-size: 48px;
+  font-weight: lighter;
+}
+
+.login-subtitle {
+  text-align: center;
+}
+
+/* Error message styling */
+
+.error-message {
+  color: red;
+  text-align: center;
+}
