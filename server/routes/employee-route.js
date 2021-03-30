@@ -308,7 +308,7 @@ router.post('/:empId/tasks', async(req, res) => {
 
                 const deleteDoneItemSuccess = new BaseResponse('200', 'Query successful', updatedDoneItemEmployee);
 
-                res.status(200).send(updatedDoneItemEmployee.toObject());
+                res.status(200).send(deleteDoneItemSuccess.toObject());
               }
             })
           }
