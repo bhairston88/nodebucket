@@ -12,4 +12,6 @@
 export interface Item {
   _id: string;
   text: string;
+  dueDate: string;
+  description: string;
 }

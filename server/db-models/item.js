@@ -20,8 +20,7 @@ const Schema = mongoose.Schema;
 let itemClass = new Schema({
   text: { type: String },
   dueDate: { type: String },
-  description: { type: String },
- /* priorityLevel: { type: Array } ??*/
+  description: { type: String }
 })
 
 //Export schema

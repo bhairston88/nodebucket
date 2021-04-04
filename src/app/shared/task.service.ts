@@ -4,7 +4,7 @@
 ; Author: Professor Krasso
 ; Date: 29 March 2021
 ; Modified By: Brooklyn Hairston
-; Description: Task service
+; Description: Task service that handles all API calls
 ; ==============================
 */
 
@@ -27,7 +27,7 @@ export class TaskService {
     * @returns A http get request with the URL path as the parameter
     */
    findAllTasks(empId: string): Observable<any> {
-     return this.http.get('/api/employee/' + empId + '/tasks')
+     return this.http.get('/api/employees/' + empId + '/tasks')
    }
 
 
@@ -38,9 +38,11 @@ export class TaskService {
      * @returns an Observable of type any
      * @returns A http post request with the URL path as the parameter and then passes in the text set to task
      */
-    createTask(empId: string, task: string): Observable<any> {
+    createTask({ empId, task, date, words }: { empId: string; task: string; date: string; words: string; }): Observable<any> {
       return this.http.post('/api/employees/' + empId + '/tasks', {
-        text: task
+        text: task,
+        dueDate: date,
+        description: words
       })
     }
 
