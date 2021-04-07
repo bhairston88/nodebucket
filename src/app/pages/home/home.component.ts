@@ -114,6 +114,28 @@ export class HomeComponent implements OnInit {
      *
      * @param taskId
      */
+    openUpdateTaskDialog() {
+      const dialogRef = this.dialog.open(CreateTaskDialogComponent, {
+        disableClose: true
+       })
+       dialogRef.afterClosed().subscribe(data => {
+         if (data)
+         {
+          this.taskService.updateTask( this.empId, this.todo, this.done).subscribe(res => {
+            this.employee = res.data;
+          }, err => {
+            console.log(err);
+          }, () => {
+            this.todo = this.employee.todo;
+            this.done = this.employee.done;
+          })
+         }
+       })
+}
+    /**
+     *
+     * @param taskId
+     */
 
     deleteTask(taskId: string): void {
       if (taskId)

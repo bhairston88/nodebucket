@@ -64,6 +64,9 @@
 
                   <!-- menu -->
                   <div fxFlex fxLayoutAlign="end">
+                    <button (click)="openUpdateTaskDialog(item._id)" mat-icon-button>
+                      <mat-icon>edit</mat-icon>
+                    </button>
                     <button (click)="deleteTask(item._id)" mat-icon-button>
 
                       <mat-icon>delete</mat-icon>
