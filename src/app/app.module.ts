@@ -35,7 +35,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { CreateTaskDialogComponent } from './shared/create-task-dialog/create-task-dialog.component';
 import { AboutComponent } from './pages/about/about.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
-import { UpdateTaskDialogComponent } from './shared/update-task-dialog/update-task-dialog.component';
+
 
 @NgModule({
   declarations: [
@@ -47,7 +47,7 @@ import { UpdateTaskDialogComponent } from './shared/update-task-dialog/update-ta
     CreateTaskDialogComponent,
     AboutComponent,
     NotFoundComponent,
-    UpdateTaskDialogComponent
+
   ],
   imports: [
     BrowserModule,

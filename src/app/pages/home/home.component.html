@@ -5,14 +5,12 @@
   <div fxFlex>
     <h1 class="title">
       Welcome to WEB 450's - nodebucket Project <br />
-      <span class="subtitle">
-        Pay close attention to the requirements, double and triple check the files for code attribution, and do not wait unitl the last minute to begin working on each item.
-      </span>
     </h1>
   </div>
   <!-- end fxFlex-->
 
   <!-- create task -->
+  <!-- mat button that opens the createTask dialog -->
   <div fxFlex class="add-button">
     <div fxLayout="column" class="create-task">
       <button mat-icon-button color="primary" (click)="openCreateTaskDialog()">Create Task
@@ -29,6 +27,7 @@
     <div fxLayout="row" fxLayoutGap="15px" class="task-container">
 
       <!-- todo -->
+      <!-- mat card for the todo column that is connected to the done column and renders the todo task items -->
       <div fxFlex>
         <mat-card>
           <mat-card-title>To Do</mat-card-title>
@@ -63,10 +62,8 @@
                     <!-- end of task name -->
 
                   <!-- menu -->
+                  <!-- A mat button to delete the task -->
                   <div fxFlex fxLayoutAlign="end">
-                    <button (click)="openUpdateTaskDialog(item._id)" mat-icon-button>
-                      <mat-icon>edit</mat-icon>
-                    </button>
                     <button (click)="deleteTask(item._id)" mat-icon-button>
 
                       <mat-icon>delete</mat-icon>
@@ -92,6 +89,8 @@
       <!-- end todo fxFlex -->
 
       <!-- done -->
+      <!-- mat card for the done column that is connected to the todo column and renders the done task items -->
+
       <div fxFlex>
         <mat-card>
           <mat-card-title>Done</mat-card-title>
@@ -119,6 +118,9 @@
                       {{ item.text }}
                     </div>
                     <!-- end done item -->
+
+                    <!-- menu -->
+                    <!-- one mat button to delete the task -->
 
                     <div fxFlex fxLayoutAlign="end">
 

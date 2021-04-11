@@ -93,6 +93,8 @@ export class HomeComponent implements OnInit {
     /**
      *
      * @param event
+     * @description uses the drag and drop module to move items in the array forward and backward within the array
+     * @description also moves the items in the array from one column to another
      */
 
     drop(event: CdkDragDrop<any[]>) {
@@ -113,28 +115,8 @@ export class HomeComponent implements OnInit {
     /**
      *
      * @param taskId
-     */
-    openUpdateTaskDialog() {
-      const dialogRef = this.dialog.open(CreateTaskDialogComponent, {
-        disableClose: true
-       })
-       dialogRef.afterClosed().subscribe(data => {
-         if (data)
-         {
-          this.taskService.updateTask( this.empId, this.todo, this.done).subscribe(res => {
-            this.employee = res.data;
-          }, err => {
-            console.log(err);
-          }, () => {
-            this.todo = this.employee.todo;
-            this.done = this.employee.done;
-          })
-         }
-       })
-}
-    /**
-     *
-     * @param taskId
+     * @returns an updated array
+     * @description Queries by the task id and deletes the task from the array
      */
 
     deleteTask(taskId: string): void {
@@ -157,7 +139,7 @@ export class HomeComponent implements OnInit {
      * @param empId
      * @param todo
      * @param done
-     * @description
+     * @description updates the task list
      */
 
     private updateTaskList(empId: string, todo: Item[], done: Item[]): void {
