@@ -1,9 +1,12 @@
+/* header styling */
+
 h1 {
   text-align: center;
   font-size: 36px;
   font-weight: bold;
 }
 
+/* image styling */
 img {
   width: 65%;
 }
@@ -12,6 +15,8 @@ img {
   padding-left: 20%;
   padding-top: 30px;
 }
+
+/* text styling */
 
 .about {
   padding-right: 20%;

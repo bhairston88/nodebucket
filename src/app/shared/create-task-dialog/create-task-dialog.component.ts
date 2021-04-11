@@ -11,7 +11,8 @@
 
 import { Component, OnInit } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, FormArray, Validators } from '@angular/forms';
+import { Item } from '../item.interface';
 
 @Component({
   selector: 'app-create-task-dialog',
@@ -31,9 +32,10 @@ export class CreateTaskDialogComponent implements OnInit {
   constructor(private dialogRef: MatDialogRef<CreateTaskDialogComponent>, private fb: FormBuilder) { }
 
   /**
-   *
+   *@description creates form with three fields, one required of text and two optional fields of dueDate and description
    */
   ngOnInit(): void {
+
     this.taskForm = this.fb.group({
       text: [null, Validators.compose([Validators.required])],
       dueDate: [null],
@@ -41,15 +43,16 @@ export class CreateTaskDialogComponent implements OnInit {
     })
   }
 
+
   /**
-   *
+   *@description submits the field values and closes the window
    */
   createTask() {
     this.dialogRef.close(this.taskForm.value);
   }
 
   /**
-   *
+   *@description closes the dialog window without submitting any values
    */
 
   cancel() {

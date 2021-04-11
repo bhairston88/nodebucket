@@ -1,13 +1,13 @@
 <!-- Title -->
 <h2 mat-dialog-title>Add new task</h2>
 
-<!-- Mat dialog content with one input field -->
+<!-- Mat dialog content with three input field -->
 <mat-dialog-content [formGroup]="taskForm">
   <mat-form-field>
     <input type="text" matInput placeholder="*Enter a task name" formControlName="text" (keydown.enter)="createTask()" />
-  </mat-form-field> <br />
+  </mat-form-field>  <br />
   <mat-form-field>
-    <input type="text" matInput placeholder="Enter a due date" formControlName="dueDate" />
+    <input type="text" matInput placeholder="Enter a due date" formControlName="dueDate"/>
   </mat-form-field> <br />
   <mat-form-field>
     <input type="text" matInput placeholder="Enter a brief description" formControlName="description" (keydown.enter)="createTask()" />
