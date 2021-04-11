@@ -44,7 +44,6 @@
   }
 
   .task-list {
-    border: 1px solid #ccc;
     min-height: 68px;
     background-color: white;
     border-radius: 4px;
@@ -55,7 +54,8 @@
   .task-card {
     cursor: move;
     padding: 20px 10px;
-    border-bottom: solid 1px #ccc;
+    border: solid 2px #ccc;
+    border-color:royalblue;
     min-height: 68px;
     font-size: 14px;
     box-sizing: border-box;

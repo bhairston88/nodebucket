@@ -7,6 +7,7 @@
       Welcome to WEB 450's - nodebucket Project <br />
     </h1>
   </div>
+  <br /><br />
   <!-- end fxFlex-->
 
   <!-- create task -->
@@ -64,7 +65,7 @@
                   <!-- menu -->
                   <!-- A mat button to delete the task -->
                   <div fxFlex fxLayoutAlign="end">
-                    <button (click)="deleteTask(item._id)" mat-icon-button>
+                    <button (click)="deleteTask(item._id)" mat-icon-button color="primary">
 
                       <mat-icon>delete</mat-icon>
                     </button>
@@ -116,6 +117,8 @@
                   <div fxLayout="row">
                     <div fxFlex>
                       {{ item.text }}
+                      {{ item.dueDate }}
+                      {{ item.description }}
                     </div>
                     <!-- end done item -->
 
@@ -124,7 +127,7 @@
 
                     <div fxFlex fxLayoutAlign="end">
 
-                      <button (click)="deleteTask(item._id)" mat-icon-button>
+                      <button (click)="deleteTask(item._id)" mat-icon-button color="primary">
 
                         <mat-icon>delete</mat-icon>
                       </button>
